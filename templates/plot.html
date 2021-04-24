@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <p>
+            <a href="/">Home</a>
+        </p>
+
+        <form>
+            <label for="datemin">Start Date:</label>
+            <input type="date" id="datemin" name="datemin">
+            
+            <label for="datemax">End Date:</label>
+            <input type="date" id="datemax" name="datemax">
+
+            <label for="province">Province (AB, BC, etc): </label>
+            <input type="text" id="province" name="province"><br><br>
+            
+            <input type="submit" value="Refresh">
+        </form>
+
+        <hi>Covid Stats from {{ the_date_min }} </hi>
+        <hi>to {{ the_date_max }} </hi>
+        <hi>in {{ the_province }} </hi><br>
+
+
+        {{ image_tag | safe}}
+        <hi> Table </hi>
+        {{ df_html | safe }}
+    </body>
+</html>
